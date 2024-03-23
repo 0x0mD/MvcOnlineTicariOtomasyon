@@ -1,0 +1,34 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari Güncelleme Ekranı</h2>
+<br />
+
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Cariid)
+
+    @Html.LabelFor(x => x.CariAd, "Cari Adı")
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariAd, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.CariSoyad, "Cari Soyadı")
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSoyad, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.CariSehir, "Cari Şehir")
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSehir, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.CariMail, "Cari Mail")
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariMail, "", new { @class = "text-danger" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
+
+

@@ -1,0 +1,48 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Ürün Güncelleme</h2>
+<br />
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Urunid)
+    @Html.LabelFor(x => x.UrunAd, "Ürün Adı")
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.UrunAd, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Marka, "Marka")
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Marka, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Stok, "Stok")
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Stok, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.AlisFiyat, "Alış Fiyatı")
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AlisFiyat, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.SatisFiyat, "Satış Fiyatı")
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SatisFiyat, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Kategori, "Kategori")
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.kategori_data_guncelle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Kategoriid, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.UrunGorsel, "Ürün Görseli")
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.UrunGorsel, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Durum, "Durum")
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Durum, "", new { @class = "text-danger" })
+
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+}

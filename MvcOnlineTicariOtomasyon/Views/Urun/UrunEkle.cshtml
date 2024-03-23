@@ -1,0 +1,44 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Ürün Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.UrunAd, "Ürün Adı")
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.UrunAd, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Marka, "Marka")
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Marka, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Stok, "Stok")
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Stok, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.AlisFiyat, "Alış Fiyatı")
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AlisFiyat, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.SatisFiyat, "Satış Fiyatı")
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SatisFiyat, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Kategori, "Kategori")
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.kategori_data_ekle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Kategoriid, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.UrunGorsel, "Ürün Görseli")
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.UrunGorsel, "", new { @class = "text-danger" })
+
+    @Html.HiddenFor(x => x.Durum, new { Value = "true" })
+
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
