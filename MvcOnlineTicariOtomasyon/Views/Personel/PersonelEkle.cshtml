@@ -1,0 +1,31 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Personel Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.HiddenFor(x => x.Durum, new { Value = "true" })
+
+    @Html.LabelFor(x => x.PersonelAd, "Personel Adı")
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelAd, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.PersonelSoyad, "Personel Soyadı")
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelSoyad, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Departman, "Departman")
+    @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.departman_data_ekle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Departmanid, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.PersonelGorsel, "Personel Fotoğrafı")
+    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelGorsel, "", new { @class = "text-danger" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
