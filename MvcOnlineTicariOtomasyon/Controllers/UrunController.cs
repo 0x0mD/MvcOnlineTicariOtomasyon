@@ -161,5 +161,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                 return View("UrunGetir", urun);
             }
         }
+        public ActionResult UrunListesi()
+        {
+            var data = db.Uruns.ToList();
+            return View(data);
+        }
     }
 }

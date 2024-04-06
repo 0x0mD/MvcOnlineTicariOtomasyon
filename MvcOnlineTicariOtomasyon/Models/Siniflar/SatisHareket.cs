@@ -17,6 +17,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public int Urunid { get; set; }
         public int Cariid { get; set; }
         public int Personelid { get; set; }
+        public bool Durum {  get; set; }
         public virtual Urun Urun { get; set; }
         public virtual Cariler Cariler { get; set; }
         public virtual Personel Personel { get; set; }
